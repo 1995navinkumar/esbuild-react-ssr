@@ -1,2 +1,5 @@
 dist
 node_modules
+src/docs/routes
+src/content-routes.js
+src/routes.js

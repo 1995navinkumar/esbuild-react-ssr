@@ -2,7 +2,7 @@ import fs from 'fs';
 import { globSync } from 'glob';
 
 function getAllFiles() {
-    return globSync("src/docs/**/*.md")
+    return globSync("src/docs/routes/**/*.md")
 }
 
 function generateRoutes() {

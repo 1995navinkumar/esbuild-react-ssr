@@ -1,5 +1,16 @@
 import * as esbuild from 'esbuild';
 import mdx from '@mdx-js/esbuild';
+import { remarkPlugin } from './mdx-plugins/remark-plugins.mjs';
+
+const mdxOptions = {
+    format: 'mdx',
+    mdxExtensions: ['.md'],
+    providerImportSource: "@mdx-js/react",
+    development: true,
+    remarkPlugins: [
+        remarkPlugin
+    ]
+}
 
 const clientConfig = {
     entryPoints: ['./src/entryBrowser.js'],
@@ -7,11 +18,10 @@ const clientConfig = {
     bundle: true,
     outdir: 'dist',
     plugins: [
-        mdx(),
+        mdx(mdxOptions),
     ],
     format: 'esm',
     splitting: true,
-    minify: true
 }
 
 const serverConfig = {
@@ -20,9 +30,10 @@ const serverConfig = {
     bundle: true,
     outfile: 'dist/entryServer.js',
     platform: 'node',
-    packages: 'external',
+    // packages: 'external',
+    // format: 'esm',
     plugins: [
-        mdx(),
+        mdx(mdxOptions),
     ],
 }
 
@@ -31,9 +42,10 @@ if (process.env.ENV === 'production') {
     await esbuild.build(clientConfig);
     await esbuild.build(serverConfig);
 } else {
-    console.log('dev server');
     let ctxClient = await esbuild.context(clientConfig);
     let ctxServer = await esbuild.context(serverConfig);
     await ctxClient.watch();
     await ctxServer.watch();
+    console.log('watch mode started');
+
 }
