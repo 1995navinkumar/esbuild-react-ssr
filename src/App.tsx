@@ -35,7 +35,7 @@ export default function App() {
 }
 
 function RenderLinks({ appRoutes }) {
-    return <section style={{ display: 'flex', gap: '16px', flexDirection: 'column', maxWidth: '400px', overflow: 'scroll', borderRight: "1px solid #dedede" }}>
+    return <section style={{ display: 'flex', gap: '16px', flexDirection: 'column', minWidth: '400px', maxWidth: '400px', overflow: 'scroll', borderRight: "1px solid #dedede" }}>
         {appRoutes.map(routeProps => <Link key={routeProps.path} to={routeProps.path}>{routeProps.path}</Link>)}
     </section>
 }

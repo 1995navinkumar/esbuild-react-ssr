@@ -55,7 +55,6 @@ const mdxOptions = {
 
 const clientConfig = {
     entryPoints: ['./src/entryBrowser.js'],
-    loader: { ".js": "jsx" },
     bundle: true,
     outdir: 'dist/browser',
     plugins: [
@@ -69,7 +68,6 @@ const clientConfig = {
 
 const serverConfig = {
     entryPoints: ['./src/generate-pages.mjs'],
-    loader: { ".mjs": "jsx", ".js": "jsx" },
     bundle: true,
     outfile: 'dist/server/generate-pages.js',
     platform: 'node',

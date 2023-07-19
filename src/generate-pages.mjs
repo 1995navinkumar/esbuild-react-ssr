@@ -2,8 +2,8 @@ import fs from 'fs';
 import React from "react";
 import { renderToPipeableStream } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server.mjs';
-import App from './App.js';
-import routes from "./routes.js";
+import App from './App';
+import routes from "./routes";
 
 function generatePages() {
     routes.forEach(route => {

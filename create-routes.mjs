@@ -36,7 +36,7 @@ function generateAsyncComponents() {
 
 const routes = generateRoutes();
 
-fs.writeFileSync('src/routes.js', `
+fs.writeFileSync('src/routes.tsx', `
 import React, { lazy } from 'react';
 import DocsWrapper from './components/docs-wrapper';
 
