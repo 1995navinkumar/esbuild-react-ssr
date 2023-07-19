@@ -6,7 +6,7 @@
     "build": "npm run clean && npm run generate-routes && ENV=production node build.mjs && npm run generate-pages",
     "generate-pages" : "node dist/server/generate-pages.js",
     "dev": "npm run clean && npm run generate-routes && node build.mjs",
-    "serve": "nodemon serve.mjs",
+    "serve": "node serve.mjs",
     "generate-routes": "node create-routes.mjs",
     "clean": "rm -rf dist"
   },
