@@ -8,6 +8,7 @@ export function remarkPlugin() {
                 node.value = "MyBrand"
             }
             node.type = 'text'
+            node.value = "Hi"
         });
     };
 };
