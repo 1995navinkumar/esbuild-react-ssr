@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "npm run clean && npm run generate-routes && ENV=production node build.mjs",
+    "build": "npm run clean && npm run generate-routes && ENV=production node build.mjs && npm run generate-pages",
+    "generate-pages" : "node dist/server/generate-pages.js",
     "dev": "npm run clean && npm run generate-routes && node build.mjs",
     "serve": "nodemon dist/entryServer.js --watch dist/entryServer.js",
     "generate-routes": "node create-routes.mjs",

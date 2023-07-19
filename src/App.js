@@ -13,7 +13,7 @@ export default function App() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="stylesheet" href="/styles.css"></link>
                 <link rel="icon" type="image/x-icon" href="/scorpion.png"></link>
-                <title data-react-helmet="true">My App</title>
+                <title>My App</title>
             </head>
             <body>
                 <HeaderContext.Provider value={setMetaTags}>
